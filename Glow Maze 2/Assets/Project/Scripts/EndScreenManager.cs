@@ -16,12 +16,28 @@ public class EndScreenManager : MonoBehaviour
         DestroyInEndLevel();
     }
 
+    private void Update()
+    {
+        Quit();
+    }
+
     void DestroyInEndLevel() // Destroys gameObjects that no longer needed in End scene
     {
         if (SceneManager.GetActiveScene().name == "EndScreen") //Checks if Scene name is EndScreen
         {
             Destroy(settingsCanvas);
             Destroy(gameManager);
+        }
+    }
+
+    private void Quit()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }
