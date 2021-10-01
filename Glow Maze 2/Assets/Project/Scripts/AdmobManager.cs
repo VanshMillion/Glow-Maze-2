@@ -10,7 +10,7 @@ public class AdmobManager : MonoBehaviour
     InterstitialAd interstitial;
     string interstitialId;
 
-    RewardedAd rewardAd;
+    public RewardedAd rewardAd;
     string rewardId;
 
     void Awake()

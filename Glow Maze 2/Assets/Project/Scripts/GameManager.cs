@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    #region VARIABLES
     public AudioMixer mainMixer;
 
     private int savedLevel;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public bool isLevelCompleted;
     public bool isGameOver;
+    #endregion
 
     void Awake()
     {

@@ -8,7 +8,7 @@ public class EndScreenManager : MonoBehaviour
     GameObject settingsCanvas;
     GameObject gameManager;
 
-    private void Start()
+    void Start()
     {
         settingsCanvas = GameObject.Find("SettingsCanvas");
         gameManager = GameObject.Find("GameManager");
@@ -16,7 +16,7 @@ public class EndScreenManager : MonoBehaviour
         DestroyInEndLevel();
     }
 
-    private void Update()
+    void Update()
     {
         Quit();
     }

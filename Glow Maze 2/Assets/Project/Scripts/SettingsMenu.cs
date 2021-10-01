@@ -8,6 +8,7 @@ public class SettingsMenu : MonoBehaviour
 {
     public static SettingsMenu Instance;
 
+    #region VARIABLES
     public int diamondsCount;
 
     [Space]
@@ -24,6 +25,7 @@ public class SettingsMenu : MonoBehaviour
     public bool isSoundOn;
 
     public TMP_Text[] allDiamondCountText;
+    public TMP_Text resumeInformText;
 
     public GameObject pausePanel;
     public TMP_Text versionText;
@@ -32,7 +34,8 @@ public class SettingsMenu : MonoBehaviour
     public AudioClip clickSound;
 
     public Animator fadeAnim;
-    public Animator notEnoughAnim;
+    public Animator resumeInform;
+    #endregion
 
     void Awake()
     {
@@ -103,9 +106,22 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            notEnoughAnim.SetTrigger("NotEnough");
+            resumeInformText.text = "Not enough diamonds \n Starting video AD";
+            resumeInform.SetTrigger("NotEnoughDiamond");
             AdmobManager.Instance.Invoke("ShowRewardedAd", 0.8f);
+
+            if (!AdmobManager.Instance.rewardAd.IsLoaded())
+            {
+                Invoke("StartNoAdLoadedAnim", 1.2f);
+            }
         }
+    }
+
+    void StartNoAdLoadedAnim()
+    {
+        Debug.Log("NO ADS LOADED!");
+        resumeInformText.text = "No AD available \n Check Internet connection!";
+        resumeInform.SetTrigger("NoAdLoaded");
     }
 
     public void ToggleVibration()

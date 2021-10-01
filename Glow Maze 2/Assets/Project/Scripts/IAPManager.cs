@@ -8,7 +8,7 @@ public class IAPManager : MonoBehaviour
 {
     public static IAPManager Instance;
 
-    private string noAdsID = "com.vanmillionstudios.glowmaze.noads";
+    private string noAdsID = "glowmaze.iap.noads";
     public Button noAdsButton;
 
     void Awake()

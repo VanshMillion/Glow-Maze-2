@@ -558,12 +558,13 @@ MonoBehaviour:
   allDiamondCountText:
   - {fileID: 660202654}
   - {fileID: 721155449}
+  resumeInformText: {fileID: 948388033}
   pausePanel: {fileID: 893649854}
   versionText: {fileID: 586096329}
   buttonSFX: {fileID: 145486690}
   clickSound: {fileID: 8300000, guid: 2c25b50cce8ba1c44996e322c11052e0, type: 3}
   fadeAnim: {fileID: 302893600}
-  notEnoughAnim: {fileID: 948388035}
+  resumeInform: {fileID: 948388035}
 --- !u!114 &145486692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3601,7 +3602,7 @@ GameObject:
   - component: {fileID: 948388033}
   - component: {fileID: 948388035}
   m_Layer: 5
-  m_Name: NotEnough (TMP)
+  m_Name: Message(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3645,9 +3646,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Not enough diamonds
+  m_text: '11
 
-    Starting video AD'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3819,13 +3820,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.5842497, y: 0, z: 0, w: 0.81157404}
-  m_LocalPosition: {x: 0, y: 13.5, z: -4.25}
+  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
+  m_LocalPosition: {x: 0, y: 13, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 71.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!1 &972556286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,15 +5894,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.vanmillionstudios.glowmaze.noads
+  productId: glowmaze.iap.noads
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1201850638}
+        m_MethodName: OnPurchaseComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPurchaseFailed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1201850638}
+        m_MethodName: OnPurchaseFailed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
