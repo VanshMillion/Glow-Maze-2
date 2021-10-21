@@ -36,6 +36,36 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Level 10.unity
     guid: 088f314eeb631354da64253ad7c9a7d7
   - enabled: 1
+    path: Assets/Project/Scenes/Level 11.unity
+    guid: d343904e66c63f643a749439f4c645cd
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 12.unity
+    guid: 82b795d2ec3d6754098bcc6070dd2660
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 13.unity
+    guid: 5d285f152fbcad045bb2224f3c13c0f0
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 14.unity
+    guid: a92983f3a5634ff429524824f00e3a5e
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 15.unity
+    guid: a1e9675290cd55c40a21bb61596b154a
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 16.unity
+    guid: 2d8e8d80ad925964fb2933d58f912a8e
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 17.unity
+    guid: 5a178fdd15e047343882ef1085fc7a20
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 18.unity
+    guid: 23d56d0cda59f2540b3945a8b96de843
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 19.unity
+    guid: 7819779e7a00a4147b83753093ef2cf9
+  - enabled: 1
+    path: Assets/Project/Scenes/Level 20.unity
+    guid: d8eb76d4156b27745a4246c73e288e50
+  - enabled: 1
     path: Assets/Project/Scenes/EndScreen.unity
     guid: a37d1c68ecd0dce4dbc1fa5f23e1608e
   m_configObjects: {}

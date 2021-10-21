@@ -62,6 +62,11 @@ public class SettingsMenu : MonoBehaviour
 
     private void Update()
     {
+        if(diamondsCount < 0)
+        {
+            diamondsCount = 0;
+        }
+
         for(int i = 0; i < allDiamondCountText.Length; i++)
         {
             allDiamondCountText[i].text = diamondsCount.ToString();
@@ -91,8 +96,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void RestartAfterGameOver()
     {
-        GameManager.Instance.CloseGameOverPanel();
         GameManager.Instance.RestartLevel();
+        GameManager.Instance.Invoke("CloseGameOverPanel", 0.1f);
     }
 
     public void ResumeAfterGameOver()

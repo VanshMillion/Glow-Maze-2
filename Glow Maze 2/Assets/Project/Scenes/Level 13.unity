@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diamondParent: {fileID: 1600519069}
   ballLight: {fileID: 1171425221}
-  levelTexture: {fileID: 2800000, guid: 495245b59b04ea8428eff05d3e8f2c5f, type: 3}
+  levelTexture: {fileID: 2800000, guid: 844c91a697803be45b8bcfa11c368c4a, type: 3}
   wallTilePrefab: {fileID: 2939190243170381706, guid: 1ebd1e7021bda6d4e95f9567335bddd1,
     type: 3}
   roadTilePrefab: {fileID: 3551350737998233902, guid: 5f2cafada720ff4408d500512e477d02,
@@ -323,9 +323,9 @@ MonoBehaviour:
   roadMat: {fileID: 2100000, guid: bc493b53152cc6244b25165b4d670fec, type: 2}
   wallMat: {fileID: 2100000, guid: d16c9390b35df154199d11d229079fc5, type: 2}
   panelMat: {fileID: 2100000, guid: adbad6302376d5a4999cb3545e507648, type: 2}
-  roadColor: {r: 0.2, g: 0, b: 0.14509812, a: 1}
-  wallColor: {r: 1, g: 0, b: 0.7254902, a: 1}
-  camColor: {r: 0.25, g: 0, b: 0.18137264, a: 1}
+  roadColor: {r: 0, g: 0.18666664, b: 0.2, a: 1}
+  wallColor: {r: 0, g: 0.93333316, b: 1, a: 1}
+  camColor: {r: 0, g: 0.23424834, b: 0.2509804, a: 1}
   ballColor: {r: 1, g: 1, b: 1, a: 1}
   paintColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   tileRoadList: []
@@ -785,7 +785,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.4
-  m_Range: 32
+  m_Range: 36
   m_SpotAngle: 179
   m_InnerSpotAngle: 6
   m_CookieSize: 10
@@ -883,7 +883,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.25, g: 0, b: 0.18137264, a: 1}
+  m_BackGroundColor: {r: 0, g: 0.23424834, b: 0.2509804, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -923,13 +923,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: 0, y: 13, z: -6}
+  m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 0, y: 16.5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
 --- !u!1 &1014762389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
   movePickUpSound: {fileID: 8300000, guid: be6587b93bb178249b2a27e0cf4fddab, type: 3}
-  moves: 13
+  moves: 18
   movesLeft: 0
   movesByPickup: 0
 --- !u!54 &1221946077
@@ -1914,7 +1914,7 @@ Transform:
   m_GameObject: {fileID: 2019955223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.2, z: -0.28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.125}
   m_Children: []
   m_Father: {fileID: 242350708}
   m_RootOrder: 0

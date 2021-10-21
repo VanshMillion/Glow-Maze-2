@@ -4783,7 +4783,7 @@ MonoBehaviour:
   stepDuration: 0.1
   wallsAndRoadsLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
   canMove: 1
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
