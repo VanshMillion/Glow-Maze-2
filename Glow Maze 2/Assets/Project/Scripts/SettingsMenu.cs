@@ -26,8 +26,10 @@ public class SettingsMenu : MonoBehaviour
 
     public TMP_Text[] allDiamondCountText;
     public TMP_Text resumeInformText;
+    public TMP_Text resumeInformText2;
 
     public GameObject pausePanel;
+    [SerializeField] public GameObject cautionPanel;
     public TMP_Text versionText;
 
     public AudioSource buttonSFX;
@@ -35,6 +37,9 @@ public class SettingsMenu : MonoBehaviour
 
     public Animator fadeAnim;
     public Animator resumeInform;
+    [SerializeField] Animator resumeInform2;
+
+    private string privacyLink = "https://sites.google.com/view/glowmaze-pp/home";
     #endregion
 
     void Awake()
@@ -71,20 +76,32 @@ public class SettingsMenu : MonoBehaviour
         {
             allDiamondCountText[i].text = diamondsCount.ToString();
         }
+
+        if(pausePanel.activeInHierarchy == true)
+        {
+            BallMovement.Instance.canMove = false;
+        }
     }
 
     public void OpenPausePanel()
     {
         pausePanel.SetActive(true);
-        Time.timeScale = 0;
-        BallMovement.Instance.canMove = false;
     }
 
     public void ClosePausePanel()
     {
         pausePanel.SetActive(false);
-        Time.timeScale = 1;
         BallMovement.Instance.canMove = true;
+    }
+
+    public void OpenCautionPanel()
+    {
+        cautionPanel.SetActive(true);
+    }
+
+    public void CloseCautionPanel()
+    {
+        cautionPanel.SetActive(false);
     }
 
     public void Restart()
@@ -92,6 +109,22 @@ public class SettingsMenu : MonoBehaviour
         ClosePausePanel();
         GameManager.Instance.DeductDiamonds();
         GameManager.Instance.RestartLevel();
+    }
+
+    public void RestoreGame()
+    {
+        OpenCautionPanel();
+    }
+
+    public void YestoRestoreGame()
+    {
+        AdmobManager.Instance.ShowRewardedAd();
+
+        if (!AdmobManager.Instance.rewardAd.IsLoaded())
+        {
+            StartNoAdLoadedAnim2();
+            AdmobManager.Instance.RequestRewardedAd();
+        }
     }
 
     public void RestartAfterGameOver()
@@ -107,6 +140,7 @@ public class SettingsMenu : MonoBehaviour
             diamondsCount -= 3;
             GameManager.Instance.CloseGameOverPanel();
             BallMovement.Instance.movesLeft += 5;
+            GameManager.Instance.isGameOver = false;
             BallMovement.Instance.canMove = true;
         }
         else
@@ -118,6 +152,7 @@ public class SettingsMenu : MonoBehaviour
             if (!AdmobManager.Instance.rewardAd.IsLoaded())
             {
                 Invoke("StartNoAdLoadedAnim", 1.2f);
+                AdmobManager.Instance.RequestRewardedAd();
             }
         }
     }
@@ -127,6 +162,13 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log("NO ADS LOADED!");
         resumeInformText.text = "No AD available \n Check Internet connection!";
         resumeInform.SetTrigger("NoAdLoaded");
+    }
+
+    void StartNoAdLoadedAnim2()
+    {
+        Debug.Log("NO ADS LOADED!");
+        resumeInformText2.text = "No AD available \n Check Internet connection!";
+        resumeInform2.SetTrigger("NotEnoughDiamond");
     }
 
     public void ToggleVibration()
@@ -159,6 +201,11 @@ public class SettingsMenu : MonoBehaviour
             soundToggle.GetComponent<Image>().sprite = soundOffSprite;
             GameManager.Instance.mainMixer.SetFloat("Volume", -80f);
         }
+    }
+
+    public void OpenPrivacy()
+    {
+        Application.OpenURL(privacyLink);
     }
 
     public void PlayButtonClickSound() // Play sound when Player clicks a Button

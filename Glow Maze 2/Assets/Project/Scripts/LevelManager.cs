@@ -87,6 +87,16 @@ public class LevelManager : MonoBehaviour
         Debug.Log("LEVEL SAVED! " + reachedLevel);
 
         diamondPickUpCount = diamondParent.childCount;
+
+        if (!AdmobManager.Instance.interstitialAd.IsLoaded())
+        {
+            AdmobManager.Instance.RequestInterstitialAd();
+        }
+
+        if (!AdmobManager.Instance.rewardAd.IsLoaded())
+        {
+            AdmobManager.Instance.RequestRewardedAd();
+        }
     }
 
     private void Generate()

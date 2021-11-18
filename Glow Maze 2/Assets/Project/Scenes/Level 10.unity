@@ -486,7 +486,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 40
+  _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!4 &339482220
@@ -1519,11 +1519,12 @@ MonoBehaviour:
   wallsAndRoadsLayer:
     serializedVersion: 2
     m_Bits: 256
+  moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
   movePickUpSound: {fileID: 8300000, guid: be6587b93bb178249b2a27e0cf4fddab, type: 3}
-  moves: 30
+  moves: 25
   movesLeft: 0
   movesByPickup: 0
 --- !u!54 &1221946077
@@ -2346,6 +2347,11 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: 5745a383398872940a76a1c0100b039e, type: 2}
   gameOverCount: 0
   gameOverPanel: {fileID: 0}
+  tutuorialPanel: {fileID: 0}
+  move_i: {fileID: 0}
+  fill_i: {fileID: 0}
+  powerUp_i: {fileID: 0}
+  tapToContinue: {fileID: 0}
   isLevelCompleted: 0
   isGameOver: 0
 --- !u!114 &2044180313

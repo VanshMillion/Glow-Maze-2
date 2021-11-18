@@ -323,9 +323,9 @@ MonoBehaviour:
   roadMat: {fileID: 2100000, guid: bc493b53152cc6244b25165b4d670fec, type: 2}
   wallMat: {fileID: 2100000, guid: d16c9390b35df154199d11d229079fc5, type: 2}
   panelMat: {fileID: 2100000, guid: adbad6302376d5a4999cb3545e507648, type: 2}
-  roadColor: {r: 0, g: 0.2, b: 0.0033333302, a: 1}
-  wallColor: {r: 0, g: 1, b: 0.01666665, a: 1}
-  camColor: {r: 0, g: 0.25, b: 0.0036231875, a: 1}
+  roadColor: {r: 0.2, g: 0.16333334, b: 0, a: 1}
+  wallColor: {r: 1, g: 0.81666666, b: 0, a: 1}
+  camColor: {r: 0.2509804, g: 0.20496733, b: 0, a: 1}
   ballColor: {r: 1, g: 1, b: 1, a: 1}
   paintColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   tileRoadList: []
@@ -486,7 +486,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 40
+  _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!4 &339482220
@@ -883,7 +883,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.25, b: 0.0036231875, a: 1}
+  m_BackGroundColor: {r: 0.2509804, g: 0.20496733, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -924,7 +924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
-  m_LocalPosition: {x: 0, y: 15.5, z: -2}
+  m_LocalPosition: {x: 0, y: 14.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1306,11 +1306,12 @@ MonoBehaviour:
   wallsAndRoadsLayer:
     serializedVersion: 2
     m_Bits: 256
+  moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
   movePickUpSound: {fileID: 8300000, guid: be6587b93bb178249b2a27e0cf4fddab, type: 3}
-  moves: 18
+  moves: 13
   movesLeft: 0
   movesByPickup: 0
 --- !u!54 &1221946077
@@ -1673,7 +1674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1600519069
 Transform:
   m_ObjectHideFlags: 0
@@ -1869,7 +1870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1983150944
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2028,11 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: 5745a383398872940a76a1c0100b039e, type: 2}
   gameOverCount: 0
   gameOverPanel: {fileID: 0}
+  tutuorialPanel: {fileID: 0}
+  move_i: {fileID: 0}
+  fill_i: {fileID: 0}
+  powerUp_i: {fileID: 0}
+  tapToContinue: {fileID: 0}
   isLevelCompleted: 0
   isGameOver: 0
 --- !u!114 &2044180313
@@ -2066,7 +2072,7 @@ PrefabInstance:
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
@@ -2076,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
@@ -16588,7 +16594,7 @@ PrefabInstance:
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
@@ -16598,7 +16604,7 @@ PrefabInstance:
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}

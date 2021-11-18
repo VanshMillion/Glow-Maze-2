@@ -19,7 +19,7 @@ public class BallMovement : MonoBehaviour
 
     private Vector3 ballYOffset = new Vector3(0f, 0.1f, 0f);
 
-    private Vector3 moveDirection;
+    [HideInInspector] public Vector3 moveDirection;
     public bool canMove = true;
 
     public AudioSource ballAudio;
@@ -74,7 +74,13 @@ public class BallMovement : MonoBehaviour
 
     private void MoveBall()
     {
-        if (canMove)
+        if (GameManager.Instance.move_i.activeInHierarchy == true && moveDirection == Vector3.forward)
+        {
+            GameManager.Instance.move_i.SetActive(false);
+            GameManager.Instance.Invoke("ActivateFillTutorial", 0.2f);
+        }
+
+        if (canMove && GameManager.Instance.isGameOver == false)
         {
             canMove = false;
             // add raycast in the swipe direction (from the ball) :

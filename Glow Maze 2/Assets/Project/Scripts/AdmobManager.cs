@@ -7,10 +7,10 @@ public class AdmobManager : MonoBehaviour
 {
     public static AdmobManager Instance;
 
-    InterstitialAd interstitial;
+    [HideInInspector] public InterstitialAd interstitialAd;
     string interstitialId;
 
-    public RewardedAd rewardAd;
+    [HideInInspector] public RewardedAd rewardAd;
     string rewardId;
 
     void Awake()
@@ -29,12 +29,12 @@ public class AdmobManager : MonoBehaviour
 
     void Start()
     {
-        RequestInterstitial();
+        RequestInterstitialAd();
         RequestRewardedAd();
     }
 
     #region //** INTERSTITIAL ADS **//
-    void RequestInterstitial()
+    public void RequestInterstitialAd()
     {
 
 #if UNITY_ANDROID
@@ -45,27 +45,27 @@ public class AdmobManager : MonoBehaviour
         interstitialId = null;
 #endif
 
-        interstitial = new InterstitialAd(interstitialId);
+        interstitialAd = new InterstitialAd(interstitialId);
 
         //call events
-        interstitial.OnAdLoaded += HandleOnInterstitialAdLoaded;
-        interstitial.OnAdFailedToLoad += HandleOnInterstitialAdFailedToLoad;
-        interstitial.OnAdOpening += HandleOnInterstitialAdOpened;
-        interstitial.OnAdClosed += HandleOnInterstitialAdClosed;
-        interstitial.OnAdLeavingApplication += HandleOnInterstitialAdLeavingApplication;
+        interstitialAd.OnAdLoaded += HandleOnInterstitialAdLoaded;
+        interstitialAd.OnAdFailedToLoad += HandleOnInterstitialAdFailedToLoad;
+        interstitialAd.OnAdOpening += HandleOnInterstitialAdOpened;
+        interstitialAd.OnAdClosed += HandleOnInterstitialAdClosed;
+        interstitialAd.OnAdLeavingApplication += HandleOnInterstitialAdLeavingApplication;
 
 
         //create and ad request
         if (PlayerPrefs.HasKey("Consent"))
         {
             AdRequest request = new AdRequest.Builder().Build();
-            interstitial.LoadAd(request); //load & show the banner ad
+            interstitialAd.LoadAd(request); //load & show the banner ad
             Debug.Log("Interstitial Ad is Ready to Show after Consent");
         }
         else
         {
             AdRequest request = new AdRequest.Builder().AddExtra("npa", "1").Build();
-            interstitial.LoadAd(request); //load & show the banner ad (non-personalised)
+            interstitialAd.LoadAd(request); //load & show the banner ad (non-personalised)
             Debug.Log("Interstitial Ad is Ready to Show without Consent");
         }
     }
@@ -75,10 +75,10 @@ public class AdmobManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("ads") == false)
         {
-            if (interstitial.IsLoaded())
+            if (interstitialAd.IsLoaded())
             {
-                interstitial.Show();
-                RequestInterstitial();
+                interstitialAd.Show();
+                RequestInterstitialAd();
             }
         }
         else
@@ -101,7 +101,7 @@ public class AdmobManager : MonoBehaviour
     public void HandleOnInterstitialAdOpened(object sender, EventArgs args)
     {
         Debug.LogWarning("Interstitial Ads Opened!");
-        RequestInterstitial();
+        RequestInterstitialAd();
     }
 
     public void HandleOnInterstitialAdClosed(object sender, EventArgs args)
@@ -116,7 +116,7 @@ public class AdmobManager : MonoBehaviour
     #endregion
 
     #region //** REWARDED ADS **//
-    void RequestRewardedAd()
+    public void RequestRewardedAd()
     {
 #if UNITY_ANDROID
         rewardId = "ca-app-pub-3940256099942544/5224354917";
@@ -186,11 +186,22 @@ public class AdmobManager : MonoBehaviour
     public void HandleUserEarnedReward(object sender, EventArgs args)
     {
         //reward the player here
-        GameManager.Instance.AddDiamonds();
-        GameManager.Instance.CloseGameOverPanel();
-        BallMovement.Instance.movesLeft += 5;
-        GameManager.Instance.isGameOver = false;
-        BallMovement.Instance.canMove = true;
+        if(GameManager.Instance.isGameOver == true)
+        {
+            //reward Player for watching revive Ad
+            GameManager.Instance.AddDiamonds();
+            GameManager.Instance.CloseGameOverPanel();
+            BallMovement.Instance.movesLeft += 5;
+            GameManager.Instance.isGameOver = false;
+            BallMovement.Instance.canMove = true;
+        }
+        else
+        {
+            //reward Player for watching restore game Ad
+            SettingsMenu.Instance.ClosePausePanel();
+            SettingsMenu.Instance.CloseCautionPanel();
+            GameManager.Instance.RestoreGame2();
+        }
     }
 
     public void HandleRewardAdClosed(object sender, EventArgs args)

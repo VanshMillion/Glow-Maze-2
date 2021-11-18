@@ -486,7 +486,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 40
+  _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!4 &339482220
@@ -1306,11 +1306,12 @@ MonoBehaviour:
   wallsAndRoadsLayer:
     serializedVersion: 2
     m_Bits: 256
+  moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
   movePickUpSound: {fileID: 8300000, guid: be6587b93bb178249b2a27e0cf4fddab, type: 3}
-  moves: 13
+  moves: 7
   movesLeft: 0
   movesByPickup: 0
 --- !u!54 &1221946077
@@ -1869,7 +1870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1983150944
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2028,11 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: 5745a383398872940a76a1c0100b039e, type: 2}
   gameOverCount: 0
   gameOverPanel: {fileID: 0}
+  tutuorialPanel: {fileID: 0}
+  move_i: {fileID: 0}
+  fill_i: {fileID: 0}
+  powerUp_i: {fileID: 0}
+  tapToContinue: {fileID: 0}
   isLevelCompleted: 0
   isGameOver: 0
 --- !u!114 &2044180313
@@ -2066,7 +2072,7 @@ PrefabInstance:
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
@@ -2076,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
@@ -16588,7 +16594,7 @@ PrefabInstance:
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
@@ -16598,7 +16604,7 @@ PrefabInstance:
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4971416861317723826, guid: 0be72928d2dbe2142a4a0659376c43f4,
         type: 3}

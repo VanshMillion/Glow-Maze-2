@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diamondParent: {fileID: 1600519069}
   ballLight: {fileID: 1171425221}
-  levelTexture: {fileID: 2800000, guid: b8431a472a5883c4e92b2a99463fb744, type: 3}
+  levelTexture: {fileID: 2800000, guid: 9db1b7fdac1c9d248b0fb453d44ea587, type: 3}
   wallTilePrefab: {fileID: 2939190243170381706, guid: 1ebd1e7021bda6d4e95f9567335bddd1,
     type: 3}
   roadTilePrefab: {fileID: 3551350737998233902, guid: 5f2cafada720ff4408d500512e477d02,
@@ -323,9 +323,9 @@ MonoBehaviour:
   roadMat: {fileID: 2100000, guid: bc493b53152cc6244b25165b4d670fec, type: 2}
   wallMat: {fileID: 2100000, guid: d16c9390b35df154199d11d229079fc5, type: 2}
   panelMat: {fileID: 2100000, guid: adbad6302376d5a4999cb3545e507648, type: 2}
-  roadColor: {r: 0.0066666603, g: 0, b: 0.2, a: 1}
-  wallColor: {r: 0.0333333, g: 0, b: 1, a: 1}
-  camColor: {r: 0.007246375, g: 0, b: 0.25, a: 1}
+  roadColor: {r: 0.01999998, g: 0, b: 0.2, a: 1}
+  wallColor: {r: 0.099999905, g: 0, b: 1, a: 1}
+  camColor: {r: 0.025098016, g: 0, b: 0.2509804, a: 1}
   ballColor: {r: 1, g: 1, b: 1, a: 1}
   paintColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   tileRoadList: []
@@ -486,7 +486,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 40
+  _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!4 &339482220
@@ -785,7 +785,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.4
-  m_Range: 40
+  m_Range: 45
   m_SpotAngle: 179
   m_InnerSpotAngle: 6
   m_CookieSize: 10
@@ -883,7 +883,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.007246375, g: 0, b: 0.25, a: 1}
+  m_BackGroundColor: {r: 0.025098016, g: 0, b: 0.2509804, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -924,7 +924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.6427876, y: 0, z: 0, w: 0.7660445}
-  m_LocalPosition: {x: 0, y: 15.5, z: -2}
+  m_LocalPosition: {x: 0, y: 16, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1306,11 +1306,12 @@ MonoBehaviour:
   wallsAndRoadsLayer:
     serializedVersion: 2
     m_Bits: 256
+  moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   ballAudio: {fileID: 1221946079}
   diamondSound: {fileID: 8300000, guid: cc550c3e0e2826244ab077b638801d17, type: 3}
   movePickUpSound: {fileID: 8300000, guid: be6587b93bb178249b2a27e0cf4fddab, type: 3}
-  moves: 21
+  moves: 18
   movesLeft: 0
   movesByPickup: 0
 --- !u!54 &1221946077
@@ -2027,6 +2028,11 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: 5745a383398872940a76a1c0100b039e, type: 2}
   gameOverCount: 0
   gameOverPanel: {fileID: 0}
+  tutuorialPanel: {fileID: 0}
+  move_i: {fileID: 0}
+  fill_i: {fileID: 0}
+  powerUp_i: {fileID: 0}
+  tapToContinue: {fileID: 0}
   isLevelCompleted: 0
   isGameOver: 0
 --- !u!114 &2044180313
@@ -2066,7 +2072,7 @@ PrefabInstance:
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 164085868245790645, guid: 4987aeab63ff3c74d8f74dcb68bc4f8d,
         type: 3}
