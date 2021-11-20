@@ -29,6 +29,8 @@ public class AdmobManager : MonoBehaviour
 
     void Start()
     {
+        MobileAds.Initialize(initStatus => { });
+
         RequestInterstitialAd();
         RequestRewardedAd();
     }
@@ -36,14 +38,7 @@ public class AdmobManager : MonoBehaviour
     #region //** INTERSTITIAL ADS **//
     public void RequestInterstitialAd()
     {
-
-#if UNITY_ANDROID
-        interstitialId = "ca-app-pub-3940256099942544/1033173712";
-#elif UNITY_EDITOR
-        interstitialId = "ca-app-pub-3940256099942544/1033173712";
-#else
-        interstitialId = null;
-#endif
+        interstitialId = "ca-app-pub-6656769151965978/6547118202";
 
         interstitialAd = new InterstitialAd(interstitialId);
 
@@ -118,13 +113,7 @@ public class AdmobManager : MonoBehaviour
     #region //** REWARDED ADS **//
     public void RequestRewardedAd()
     {
-#if UNITY_ANDROID
-        rewardId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_EDITOR
-        rewardId = "ca-app-pub-3940256099942544/5224354917";
-#else
-        rewardId = null;
-#endif
+        rewardId = "ca-app-pub-6656769151965978/1814855643";
 
         rewardAd = new RewardedAd(rewardId);
 
