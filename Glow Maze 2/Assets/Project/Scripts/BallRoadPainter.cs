@@ -56,7 +56,7 @@ public class BallRoadPainter : MonoBehaviour
                     GameManager.Instance.VibrateOnWinorLose();
                     if((SceneManager.GetActiveScene().buildIndex + 1) % 3 == 0)
                     {
-                        AdmobManager.Instance.Invoke("ShowInterstitial", 1.3f);
+                        AdsManager.Instance.Invoke("ShowInterstitialAd", 1.3f);
                     }
 
                     Invoke("NextLevel", 1.2f);

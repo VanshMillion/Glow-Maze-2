@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Advertisements;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -118,12 +119,11 @@ public class SettingsMenu : MonoBehaviour
 
     public void YestoRestoreGame()
     {
-        AdmobManager.Instance.ShowRewardedAd();
+        AdsManager.Instance.ShowRewardedAd();
 
-        if (!AdmobManager.Instance.rewardAd.IsLoaded())
+        if (!Advertisement.IsReady(AdsManager.Instance.rewarded_Android))
         {
             StartNoAdLoadedAnim2();
-            AdmobManager.Instance.RequestRewardedAd();
         }
     }
 
@@ -147,12 +147,11 @@ public class SettingsMenu : MonoBehaviour
         {
             resumeInformText.text = "Not enough diamonds \n Starting video AD";
             resumeInform.SetTrigger("NotEnoughDiamond");
-            AdmobManager.Instance.Invoke("ShowRewardedAd", 0.8f);
+            AdsManager.Instance.Invoke("ShowRewardedAd", 0.8f);
 
-            if (!AdmobManager.Instance.rewardAd.IsLoaded())
+            if (!Advertisement.IsReady(AdsManager.Instance.rewarded_Android))
             {
                 Invoke("StartNoAdLoadedAnim", 1.2f);
-                AdmobManager.Instance.RequestRewardedAd();
             }
         }
     }

@@ -8,7 +8,6 @@ public class EndScreenManager : MonoBehaviour
     GameObject settingsCanvas;
     GameObject gameManager;
 
-    private string feedbackLink = "https://sites.google.com/view/vanmillionstudios/contacts";
     private string facebookLink = "https://www.facebook.com/vanmillionstudios";
     private string twitterLink = "https://twitter.com/VanmillionSt_";
     private string mail = "https://sites.google.com/view/vanmillionstudios/contacts";
@@ -33,11 +32,6 @@ public class EndScreenManager : MonoBehaviour
             Destroy(settingsCanvas);
             Destroy(gameManager);
         }
-    }
-
-    public void OpenFeedback()
-    {
-        Application.OpenURL(feedbackLink);
     }
 
     public void OpenFacebook()

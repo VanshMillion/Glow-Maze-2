@@ -5766,9 +5766,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098495348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a285980e513508429712a532b534a1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 064dcad185ed25b479500c03aabb30c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interstitial_Android: Interstitial_Android
+  rewarded_Android: Rewarded_Android
 --- !u!4 &1098495350
 Transform:
   m_ObjectHideFlags: 0

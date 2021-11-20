@@ -141,7 +141,7 @@ public class BallMovement : MonoBehaviour
 
                 if (GameManager.Instance.gameOverCount % 3 == 0)
                 {
-                    AdmobManager.Instance.Invoke("ShowInterstitial", 0.3f);
+                    AdsManager.Instance.Invoke("ShowInterstitialAd", 0.3f);
                     //GameManager.Instance.Invoke("AddDiamonds", 0.5f);
                 }
             }
