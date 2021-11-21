@@ -1,2 +1,2 @@
 # Glow-Maze-2
-Glow Maze version with In-App Purchase and Admob
+Glow Maze version to Publish on Google Play
