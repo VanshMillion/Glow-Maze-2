@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     #region VARIABLES
 
-    private int reachedLevel;
+    [HideInInspector] public int reachedLevel;
 
     [SerializeField] private Transform diamondParent;
 

@@ -12,7 +12,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     string gameId_Android = "4462143";
     [HideInInspector] public string interstitial_Android = "Interstitial_Android";
     [HideInInspector] public string rewarded_Android = "Rewarded_Android";
-    bool testMode = true;
+    bool testMode = false;
     #endregion
 
     void Awake()
