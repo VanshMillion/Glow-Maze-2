@@ -41,6 +41,10 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] Animator resumeInform2;
 
     private string privacyLink = "https://sites.google.com/view/glowmaze-pp/home";
+
+    private string facebookLink = "https://www.facebook.com/vanmillionstudios";
+    private string twitterLink = "https://twitter.com/VanmillionSt_";
+    private string mail = "https://sites.google.com/view/vanmillionstudios/contacts";
     #endregion
 
     void Awake()
@@ -205,6 +209,21 @@ public class SettingsMenu : MonoBehaviour
     public void OpenPrivacy()
     {
         Application.OpenURL(privacyLink);
+    }
+
+    public void OpenFacebook()
+    {
+        Application.OpenURL(facebookLink);
+    }
+
+    public void OpenTwitter()
+    {
+        Application.OpenURL(twitterLink);
+    }
+
+    public void OpenMailList()
+    {
+        Application.OpenURL(mail);
     }
 
     public void PlayButtonClickSound() // Play sound when Player clicks a Button

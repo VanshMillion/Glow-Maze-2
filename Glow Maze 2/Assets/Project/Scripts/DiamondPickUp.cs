@@ -8,7 +8,7 @@ public class DiamondPickUp : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.up, 18f * Time.deltaTime);
+        transform.Rotate(Vector3.up, 20f * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)

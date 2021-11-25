@@ -981,11 +981,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'THANKS for testing this Prototype version.
+  m_text: 'THANK YOU for testing this Prototype version.
 
 
-    PLEASE consider to send
-    your Feedback & Suggestions so I can make this game more fun for You.
+    PLEASE consider to
+    send your Feedback & Suggestions so I can make this game more fun for You.
 
 '
   m_isRightToLeft: 0
@@ -1766,7 +1766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057067741

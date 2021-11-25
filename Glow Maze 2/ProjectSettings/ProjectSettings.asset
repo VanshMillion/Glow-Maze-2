@@ -126,7 +126,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.6.4
+  bundleVersion: 0.6.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -172,8 +172,8 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.vanmillionstudios.glowmaze
   buildNumber: {}
-  AndroidBundleVersionCode: 4
-  AndroidMinSdkVersion: 27
+  AndroidBundleVersionCode: 7
+  AndroidMinSdkVersion: 28
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 

@@ -119,8 +119,8 @@ public class BallMovement : MonoBehaviour
             float moveDuration = stepDuration * steps;
 
             transform
-               .DOMove(targetPosition, moveDuration)
-               .SetEase(Ease.OutExpo)
+               .DOMove(targetPosition, moveDuration / 4)
+               .SetEase(Ease.Flash)
                .OnComplete(() => OnTweenComplete());
 
             if (onMoveStart != null)

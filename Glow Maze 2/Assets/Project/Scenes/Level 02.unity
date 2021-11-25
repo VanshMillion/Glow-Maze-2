@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1019f08323010794aa0cdd2fac36cb9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reachedLevel: 0
   diamondParent: {fileID: 1600519069}
   ballLight: {fileID: 1171425221}
   levelTexture: {fileID: 2800000, guid: 495245b59b04ea8428eff05d3e8f2c5f, type: 3}
