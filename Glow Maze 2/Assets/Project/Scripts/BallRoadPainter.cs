@@ -55,6 +55,7 @@ public class BallRoadPainter : MonoBehaviour
                     LevelManager.Instance.Invoke("PlayWinFX", 0.3f);
                     GameManager.Instance.VibrateOnWinorLose();
                     GAManager.Instance.OnLevelCompleted(levelManager.reachedLevel);
+                    FBManager.Instance.LevelCompleted(levelManager.reachedLevel);
 
                     if((SceneManager.GetActiveScene().buildIndex + 1) % 3 == 0)
                     {

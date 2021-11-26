@@ -40,7 +40,7 @@ public class SettingsMenu : MonoBehaviour
     public Animator resumeInform;
     [SerializeField] Animator resumeInform2;
 
-    private string privacyLink = "https://sites.google.com/view/glowmaze-pp/home";
+    private string privacyLink = "https://sites.google.com/view/glowmaze/privacy-policy";
 
     private string facebookLink = "https://www.facebook.com/vanmillionstudios";
     private string twitterLink = "https://twitter.com/VanmillionSt_";
