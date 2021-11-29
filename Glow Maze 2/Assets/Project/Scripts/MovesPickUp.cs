@@ -5,10 +5,10 @@ using TMPro;
 
 public class MovesPickUp : MonoBehaviour
 {
-    public int extraMoves;
-    public TMP_Text extraMoveText;
+    [SerializeField] public int extraMoves;
+    [SerializeField] public TMP_Text extraMoveText;
 
-    public ParticleSystem emitParticle;
+    [SerializeField] public ParticleSystem emitParticle;
 
     void Start()
     {

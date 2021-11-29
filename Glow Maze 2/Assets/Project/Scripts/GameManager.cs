@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     #region VARIABLES
-    public AudioMixer mainMixer;
+    [SerializeField] public AudioMixer mainMixer;
 
     private int savedLevel;
-    public int gameOverCount;
+    [SerializeField] public int gameOverCount;
 
-    public GameObject gameOverPanel;
+    [SerializeField] public GameObject gameOverPanel;
 
     [Header("Tutorial UI")]
     [SerializeField] GameObject tutuorialPanel;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject powerUp_i;
     [SerializeField] public GameObject tapToContinue;
 
-    public bool isLevelCompleted;
-    public bool isGameOver;
+    [SerializeField] public bool isLevelCompleted;
+    [SerializeField] public bool isGameOver;
     #endregion
 
     void Awake()

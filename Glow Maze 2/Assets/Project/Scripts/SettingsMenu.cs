@@ -10,34 +10,34 @@ public class SettingsMenu : MonoBehaviour
     public static SettingsMenu Instance;
 
     #region VARIABLES
-    public int diamondsCount;
+    [SerializeField] public int diamondsCount;
 
     [Space]
     [Header("Toggle Functions")]
-    public Toggle vibrationToggle;
-    public Toggle soundToggle;
+    [SerializeField] public Toggle vibrationToggle;
+    [SerializeField] public Toggle soundToggle;
 
-    public Sprite vibrationOnSprite;
-    public Sprite vibrationOffSprite;
-    public Sprite soundOnSprite;
-    public Sprite soundOffSprite;
+    [SerializeField] public Sprite vibrationOnSprite;
+    [SerializeField] public Sprite vibrationOffSprite;
+    [SerializeField] public Sprite soundOnSprite;
+    [SerializeField] public Sprite soundOffSprite;
 
-    public bool isVibrationOn;
-    public bool isSoundOn;
+    [SerializeField] public bool isVibrationOn;
+    [SerializeField] public bool isSoundOn;
 
-    public TMP_Text[] allDiamondCountText;
-    public TMP_Text resumeInformText;
-    public TMP_Text resumeInformText2;
+    [SerializeField] public TMP_Text[] allDiamondCountText;
+    [SerializeField] public TMP_Text resumeInformText;
+    [SerializeField] public TMP_Text resumeInformText2;
 
-    public GameObject pausePanel;
+    [SerializeField] public GameObject pausePanel;
     [SerializeField] public GameObject cautionPanel;
-    public TMP_Text versionText;
+    [SerializeField] public TMP_Text versionText;
 
-    public AudioSource buttonSFX;
-    public AudioClip clickSound;
+    [SerializeField] public AudioSource buttonSFX;
+    [SerializeField] public AudioClip clickSound;
 
-    public Animator fadeAnim;
-    public Animator resumeInform;
+    [SerializeField] public Animator fadeAnim;
+    [SerializeField] public Animator resumeInform;
     [SerializeField] Animator resumeInform2;
 
     private string privacyLink = "https://sites.google.com/view/glowmaze/privacy-policy";
@@ -139,9 +139,9 @@ public class SettingsMenu : MonoBehaviour
 
     public void ResumeAfterGameOver()
     {
-        if(diamondsCount >= 3)
+        if(diamondsCount >= 5)
         {
-            diamondsCount -= 3;
+            diamondsCount -= 5;
             GameManager.Instance.CloseGameOverPanel();
             BallMovement.Instance.movesLeft += 5;
             GameManager.Instance.isGameOver = false;

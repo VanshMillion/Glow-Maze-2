@@ -11,7 +11,7 @@ public class BallRoadPainter : MonoBehaviour
     [SerializeField] private BallMovement ballMovement;
     [SerializeField] private MeshRenderer ballMeshRenderer;
 
-    public int paintedRoadTiles = 0;
+    [SerializeField] public int paintedRoadTiles = 0;
 
     void Awake()
     {

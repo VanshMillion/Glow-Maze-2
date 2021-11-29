@@ -20,17 +20,17 @@ public class BallMovement : MonoBehaviour
     private Vector3 ballYOffset = new Vector3(0f, 0.1f, 0f);
 
     [HideInInspector] public Vector3 moveDirection;
-    public bool canMove = true;
+    [SerializeField] public bool canMove = true;
 
-    public AudioSource ballAudio;
-    public AudioClip diamondSound, movePickUpSound;
+    [SerializeField] public AudioSource ballAudio;
+    [SerializeField] public AudioClip diamondSound, movePickUpSound;
 
-    public UnityAction<List<RoadTile>, float> onMoveStart;
+    [SerializeField] public UnityAction<List<RoadTile>, float> onMoveStart;
 
-    public int moves;
-    public int movesLeft;
+    [SerializeField] public int moves;
+    [SerializeField] public int movesLeft;
 
-    public int movesByPickup = 0;
+    [SerializeField] public int movesByPickup = 0;
     #endregion
 
     void Awake()

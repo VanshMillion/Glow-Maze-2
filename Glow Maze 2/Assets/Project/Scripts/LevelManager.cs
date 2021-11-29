@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private Transform diamondParent;
 
-    public Light ballLight;
+    [SerializeField] public Light ballLight;
 
     [Header("Level texture")]
     [SerializeField] private Texture2D levelTexture;
@@ -25,19 +25,19 @@ public class LevelManager : MonoBehaviour
 
     [Space]
     [Header("Materials and Colors")]
-    public Material roadMat;
-    public Material wallMat;
+    [SerializeField] public Material roadMat;
+    [SerializeField] public Material wallMat;
 
     public Material panelMat;
 
     [Space]
-    public Color roadColor;
-    public Color wallColor;
-    public Color camColor;
+    [SerializeField] public Color roadColor;
+    [SerializeField] public Color wallColor;
+    [SerializeField] public Color camColor;
 
     [Header("Ball and Road paint color")]
-    public Color ballColor;
-    public Color paintColor;
+    [SerializeField] public Color ballColor;
+    [SerializeField] public Color paintColor;
 
     [HideInInspector] public List<RoadTile> tileRoadList = new List<RoadTile>();
     [HideInInspector] public RoadTile defaultRoadTile;
@@ -47,18 +47,18 @@ public class LevelManager : MonoBehaviour
 
     private float unitPerPixel;
 
-    public int diamondstoRemove;
+    [SerializeField] public int diamondstoRemove;
 
-    public int diamondPickUpCount;
+    [SerializeField] public int diamondPickUpCount;
 
     [SerializeField] private ParticleSystem winFX;
 
-    public TMP_Text addedMovesText;
+    [SerializeField] public TMP_Text addedMovesText;
 
-    public Animator addedMovesAnim;
+    [SerializeField] public Animator addedMovesAnim;
 
-    public AudioSource levelAudio;
-    public AudioClip winSound;
+    [SerializeField] public AudioSource levelAudio;
+    [SerializeField] public AudioClip winSound;
     #endregion
 
     void Awake()

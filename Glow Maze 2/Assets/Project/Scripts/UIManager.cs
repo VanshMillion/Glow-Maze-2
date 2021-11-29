@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text currentLevelText;
     [SerializeField] private TMP_Text movesLeftText;
 
-    public Animator levelCompleteAnim;
+    [SerializeField] public Animator levelCompleteAnim;
 
     private int currentLevel;
 

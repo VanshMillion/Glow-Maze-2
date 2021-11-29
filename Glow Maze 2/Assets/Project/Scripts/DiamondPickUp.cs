@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiamondPickUp : MonoBehaviour
 {
-    public ParticleSystem emitParticle;
+    [SerializeField] public ParticleSystem emitParticle;
 
     void Update()
     {
