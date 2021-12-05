@@ -26,9 +26,9 @@ MonoBehaviour:
   UserMessagesFailed: 0
   CustomArea: 
   gameKey:
-  - 52227e0ac451a72fd32e85d7d31def6e
+  - 791ec4f8281415b149b4175ee357dc8d
   secretKey:
-  - 1b9246b4dad16463105e74a2fed5e8e6317477ec
+  - 48751089a408371dfd503955f7de59ac8e3ad6da
   Build:
   - 0.6.8
   SelectedPlatformOrganization:
@@ -51,7 +51,7 @@ MonoBehaviour:
   GameName: Glow Maze
   OrganizationName: 
   OrganizationIdentifier: 
-  EmailGA: vanmillionstudios@gmail.com
+  EmailGA: rajvansh12012003@gmail.com
   IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1
