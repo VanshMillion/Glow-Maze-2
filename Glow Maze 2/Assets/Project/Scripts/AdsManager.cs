@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour, IUnityAdsListener
@@ -98,9 +97,6 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
             else
             {
                 //reward Player for watching restore game Ad
-                SettingsMenu.Instance.ClosePausePanel();
-                SettingsMenu.Instance.CloseCautionPanel();
-                GameManager.Instance.RestoreGame2();
             }
         }
         else if (placementId == "Rewarded_Android" && showResult == ShowResult.Skipped)

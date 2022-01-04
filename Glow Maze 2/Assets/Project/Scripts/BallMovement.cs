@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using GG.Infrastructure.Utils.Swipe;
 using DG.Tweening;
 using System.Linq;
-using System.Collections.Generic;
 using UnityEngine.Events;
 
 public class BallMovement : MonoBehaviour
@@ -20,7 +21,7 @@ public class BallMovement : MonoBehaviour
     private Vector3 ballYOffset = new Vector3(0f, 0.1f, 0f);
 
     [HideInInspector] public Vector3 moveDirection;
-    [SerializeField] public bool canMove = true;
+    [SerializeField]  public bool canMove = true;
 
     [SerializeField] public AudioSource ballAudio;
     [SerializeField] public AudioClip diamondSound, movePickUpSound;
@@ -80,7 +81,7 @@ public class BallMovement : MonoBehaviour
             GameManager.Instance.Invoke("ActivateFillTutorial", 0.2f);
         }
 
-        if (canMove && GameManager.Instance.isGameOver == false)
+        if (canMove)
         {
             canMove = false;
             // add raycast in the swipe direction (from the ball) :
@@ -119,7 +120,7 @@ public class BallMovement : MonoBehaviour
             float moveDuration = stepDuration * steps;
 
             transform
-               .DOMove(targetPosition, moveDuration / 4)
+               .DOMove(targetPosition, moveDuration / 3)
                .SetEase(Ease.Flash)
                .OnComplete(() => OnTweenComplete());
 
@@ -128,38 +129,22 @@ public class BallMovement : MonoBehaviour
 
             GameManager.Instance.VibrateOnMove();
 
-            movesLeft--;
+            if (movesLeft != 0)
+            {
+                movesLeft--;
+            }
 
-            if(movesByPickup != 0)
+            if (movesByPickup != 0)
             {
                 movesByPickup--;
             }
 
-            if (movesLeft == 0 && GameManager.Instance.isLevelCompleted == false && movesByPickup == 0 )
-            {
-                Invoke("CheckedGameOver", 0.1f);
-
-                if (GameManager.Instance.gameOverCount % 3 == 0)
-                {
-                    AdsManager.Instance.Invoke("ShowInterstitialAd", 0.3f);
-                    //GameManager.Instance.Invoke("AddDiamonds", 0.5f);
-                }
-            }
+            GameManager.Instance.Invoke("GameOver", 0.2f);
         }
     }
 
     void OnTweenComplete()
     {
         canMove = true;
-    }
-
-    void CheckedGameOver()
-    {
-        if(movesLeft == 0)
-        {
-            canMove = false;
-
-            GameManager.Instance.GameOver();
-        }
     }
 }

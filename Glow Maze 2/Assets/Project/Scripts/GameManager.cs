@@ -67,10 +67,6 @@ public class GameManager : MonoBehaviour
         {
             BallMovement.Instance.canMove = false;
         }
-        else
-        {
-            BallMovement.Instance.canMove = true;
-        }
 
         DeviceBackFunction();
     }
@@ -85,28 +81,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void RestoreGame2()
-    {
-        PlayerPrefs.DeleteKey("SavedLevel");
-        SettingsMenu.Instance.diamondsCount = 0;
-        PlayerPrefs.DeleteKey("Diamonds");
-        PlayerPrefs.DeleteAll();
-
-        SceneManager.LoadScene("Level 01");
-    }
-
     public void GameOver()
     {
-        isGameOver = true;
-        gameOverCount++;
+        if (BallMovement.Instance.movesLeft == 0 && isLevelCompleted == false && BallMovement.Instance.movesByPickup == 0)
+        {
+            BallMovement.Instance.canMove = false;
 
-        Invoke("DeductDiamonds", 0.3f);
-        PlayerPrefs.GetInt("Diamonds");
-        PlayerPrefs.Save();
+            isGameOver = true;
+            gameOverCount++;
 
-        Invoke("OpenGameOverPanel", 0.4f);
+            Invoke("DeductDiamonds", 0.3f);
+            PlayerPrefs.GetInt("Diamonds");
+            PlayerPrefs.Save();
 
-        Debug.Log("GAME OVER!");
+            Invoke("OpenGameOverPanel", 0.4f);
+
+            Debug.Log("GAME OVER!");
+
+            if (gameOverCount % 3 == 0)
+            {
+                AdsManager.Instance.Invoke("ShowInterstitialAd", 0.3f);
+                //GameManager.Instance.Invoke("AddDiamonds", 0.5f);
+            }
+        }
     }
 
     public void TapToContinue()
@@ -121,6 +118,7 @@ public class GameManager : MonoBehaviour
         {
             powerUp_i.SetActive(false);
             tutuorialPanel.SetActive(false);
+            BallMovement.Instance.canMove = true;
         }
     }
 
@@ -130,7 +128,7 @@ public class GameManager : MonoBehaviour
         tapToContinue.SetActive(true);
     }
 
-    public void ActivatePowerupTutorial()
+    void ActivatePowerupTutorial()
     {
         powerUp_i.SetActive(true);
     }
@@ -218,11 +216,6 @@ public class GameManager : MonoBehaviour
         {
             SettingsMenu.Instance.ClosePausePanel();
         }
-
-        if (Input.GetKey(KeyCode.Escape) && SettingsMenu.Instance.pausePanel.activeInHierarchy == true && SettingsMenu.Instance.cautionPanel.activeInHierarchy == true)
-        {
-            SettingsMenu.Instance.CloseCautionPanel();
-        }
 #else
         if (Input.GetKeyDown(KeyCode.Escape) && SettingsMenu.Instance.pausePanel.activeInHierarchy == false && SettingsMenu.Instance.cautionPanel.activeInHierarchy == false)
         {
@@ -231,11 +224,6 @@ public class GameManager : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Escape) && SettingsMenu.Instance.pausePanel.activeInHierarchy == true && SettingsMenu.Instance.cautionPanel.activeInHierarchy == false)
         {
             SettingsMenu.Instance.ClosePausePanel();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && SettingsMenu.Instance.pausePanel.activeInHierarchy == true && SettingsMenu.Instance.cautionPanel.activeInHierarchy == true)
-        {
-            SettingsMenu.Instance.CloseCautionPanel();
         }
 #endif
     }

@@ -81,6 +81,7 @@ public class LevelManager : MonoBehaviour
         reachedLevel = SceneManager.GetActiveScene().buildIndex; //Set reachedLevel to Current Scene's buildindex
 
         GameManager.Instance.isGameOver = false;
+        //TinySauceManager.Instance.OnLevelStarted(reachedLevel);
 
         FadeAtStart();
 

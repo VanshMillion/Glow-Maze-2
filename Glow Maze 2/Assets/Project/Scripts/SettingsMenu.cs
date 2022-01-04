@@ -81,15 +81,11 @@ public class SettingsMenu : MonoBehaviour
         {
             allDiamondCountText[i].text = diamondsCount.ToString();
         }
-
-        if(pausePanel.activeInHierarchy == true)
-        {
-            BallMovement.Instance.canMove = false;
-        }
     }
 
     public void OpenPausePanel()
     {
+        BallMovement.Instance.canMove = false;
         pausePanel.SetActive(true);
     }
 
@@ -99,36 +95,11 @@ public class SettingsMenu : MonoBehaviour
         BallMovement.Instance.canMove = true;
     }
 
-    public void OpenCautionPanel()
-    {
-        cautionPanel.SetActive(true);
-    }
-
-    public void CloseCautionPanel()
-    {
-        cautionPanel.SetActive(false);
-    }
-
     public void Restart()
     {
         ClosePausePanel();
         GameManager.Instance.DeductDiamonds();
         GameManager.Instance.RestartLevel();
-    }
-
-    public void RestoreGame()
-    {
-        OpenCautionPanel();
-    }
-
-    public void YestoRestoreGame()
-    {
-        AdsManager.Instance.ShowRewardedAd();
-
-        if (!Advertisement.IsReady(AdsManager.Instance.rewarded_Android))
-        {
-            StartNoAdLoadedAnim2();
-        }
     }
 
     public void RestartAfterGameOver()
@@ -167,12 +138,12 @@ public class SettingsMenu : MonoBehaviour
         resumeInform.SetTrigger("NoAdLoaded");
     }
 
-    void StartNoAdLoadedAnim2()
-    {
-        Debug.Log("NO ADS LOADED!");
-        resumeInformText2.text = "No AD available \n Check Internet connection!";
-        resumeInform2.SetTrigger("NotEnoughDiamond");
-    }
+    //void StartNoAdLoadedAnim2()
+    //{
+    //    Debug.Log("NO ADS LOADED!");
+    //    resumeInformText2.text = "No AD available \n Check Internet connection!";
+    //    resumeInform2.SetTrigger("NotEnoughDiamond");
+    //}
 
     public void ToggleVibration()
     {

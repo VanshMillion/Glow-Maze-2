@@ -43,7 +43,7 @@ public class BallRoadPainter : MonoBehaviour
             if (!roadTile.isPainted)
             {
                 float duration = totalDuration / 2f;
-                float delay = i * (stepDuration / 4f);
+                float delay = i * (stepDuration / 3f);
                 Paint(roadTile, duration, delay);
 
                 //Check if Level Completed:
@@ -54,8 +54,9 @@ public class BallRoadPainter : MonoBehaviour
 
                     LevelManager.Instance.Invoke("PlayWinFX", 0.3f);
                     GameManager.Instance.VibrateOnWinorLose();
-                    GAManager.Instance.OnLevelCompleted(levelManager.reachedLevel);
-                    FBManager.Instance.LevelCompleted(levelManager.reachedLevel);
+                    //GAManager.Instance.OnLevelCompleted(levelManager.reachedLevel);
+                    //FBManager.Instance.LevelCompleted(levelManager.reachedLevel);
+                    //TinySauceManager.Instance.OnLevelFinished(true, BallMovement.Instance.movesLeft, levelManager.reachedLevel);
 
                     if((SceneManager.GetActiveScene().buildIndex + 1) % 3 == 0)
                     {

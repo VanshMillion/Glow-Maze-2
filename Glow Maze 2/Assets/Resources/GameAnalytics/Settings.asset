@@ -26,11 +26,11 @@ MonoBehaviour:
   UserMessagesFailed: 0
   CustomArea: 
   gameKey:
-  - 791ec4f8281415b149b4175ee357dc8d
+  - 8e214233d2f39a7f448f3127d9efebc0
   secretKey:
-  - 48751089a408371dfd503955f7de59ac8e3ad6da
+  - d35546c8680170ff58de657e5a9f7acdbe350f46
   Build:
-  - 0.6.8
+  - 0.1
   SelectedPlatformOrganization:
   - 
   SelectedPlatformStudio:
@@ -41,17 +41,14 @@ MonoBehaviour:
   SelectedOrganization: 00000000
   SelectedStudio: 00000000
   SelectedGame: 00000000
-  NewVersion: 7.3.2
-  Changes: '7.3.2
-
-    - fixed missing custom event fields for when trying to fix
-    missing session end events'
+  NewVersion: 
+  Changes: 
   SignUpOpen: 0
-  StudioName: Vanmillion Studios
-  GameName: Glow Maze
+  StudioName: 
+  GameName: 
   OrganizationName: 
   OrganizationIdentifier: 
-  EmailGA: rajvansh12012003@gmail.com
+  EmailGA: vanmillionstudios@gmail.com
   IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1
@@ -85,7 +82,7 @@ MonoBehaviour:
   iosIcon: {fileID: 0}
   macIcon: {fileID: 0}
   windowsPhoneIcon: {fileID: 0}
-  UsePlayerSettingsBuildNumber: 1
+  UsePlayerSettingsBuildNumber: 0
   SubmitErrors: 1
   NativeErrorReporting: 0
   MaxErrorCount: 10
